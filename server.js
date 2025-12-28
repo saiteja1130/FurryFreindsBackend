@@ -13,6 +13,15 @@ app.get("/", (req, res) => {
   res.send("Hello From hostinger");
 });
 
+app.get("/users/:id", (req, res) => {
+  try {
+    const { id } = req.params;
+    res.send({ id });
+  } catch (error) {
+    console.log("Error", error);
+  }
+});
+
 app.listen(PORT, () => {
   console.log("Server is running on port 3000");
 });
