@@ -13,10 +13,10 @@ app.get("/", (req, res) => {
   res.send("Hello From hostinger");
 });
 
-app.get("/users/:id", (req, res) => {
+app.get("/users", (req, res) => {
   try {
-    const { id } = req.params;
-    res.status(200).json({ id });
+  res.send("Hello From hostinger users");
+
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({ message: "Internal Server Error" });
