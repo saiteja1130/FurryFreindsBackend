@@ -16,11 +16,13 @@ app.get("/", (req, res) => {
 app.get("/users/:id", (req, res) => {
   try {
     const { id } = req.params;
-    res.send({ id });
+    res.status(200).json({ id });
   } catch (error) {
-    console.log("Error", error);
+    console.error("Error:", error);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 });
+
 
 app.listen(PORT, () => {
   console.log("Server is running on port 3000");
